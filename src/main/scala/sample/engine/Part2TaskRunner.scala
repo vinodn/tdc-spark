@@ -60,9 +60,10 @@ object Part2TaskRunner {
     bw.close()
   }
 
-  private def buildBufferedWriter(filePath: String) =  {
-    Try(new BufferedWriter(new FileWriter(
-      new java.io.File(filePath)))) match {
+  def buildBufferedWriter(filePath: String) =  {
+    val file = new java.io.File(filePath)
+    if(!file.exists()) file.createNewFile()
+    Try(new BufferedWriter(new FileWriter(file))) match {
         case Success(writer) => writer
         case Failure(exception) => throw new Exception(s"Failed to load file to write distinct products count output ${exception.getMessage}", exception)
       }
