@@ -1,4 +1,14 @@
-#Part 1
+Part 1
+===========
 Main class is Part1TaskRunner
-#Part 2
+
+Part 2
+===========
 Main class is Part2TaskRunner
+
+
+Run all tasks via Unit Test
+------------
+```bash
+./gradlew build
+```
