@@ -1,0 +1,20 @@
+plugins {
+    id 'scala'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compileOnly 'org.scala-lang:scala-library:2.11.12'
+
+    implementation group: 'org.apache.spark', name: 'spark-sql_2.11', version: '2.4.8'
+
+    implementation 'com.google.guava:guava:29.0-jre'
+
+    testImplementation 'junit:junit:4.13'
+    testImplementation group: 'org.scalatest', name: 'scalatest_2.11', version: '3.2.12'
+    testImplementation group: 'org.scalatestplus', name: 'junit-4-12_2.11', version: '3.2.2.0'
+
+}
